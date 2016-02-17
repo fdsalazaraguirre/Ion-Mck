@@ -5083,7 +5083,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
 .tabs-icon-top.tabs .tab-item,
 .tabs-icon-bottom > .tabs .tab-item,
 .tabs-icon-bottom.tabs .tab-item {
-  font-size: 15px;
+  font-size: 15px; /*Letter Size Icons Change*/
   line-height: 14px; 
   font-weight: bold;
 }

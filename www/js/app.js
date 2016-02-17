@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-correspondence': {
         templateUrl: 'templates/tab-correspondence.html',
-        controller: 'DashCtrl'
+        controller: 'CorrespondenceCtrl'
       }
     }
   })
@@ -69,14 +69,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('tab.course-detail', {
+    .state('course-detail', {
       url: '/course/:courseId',
-      views: {
-        'tab-course': {
-          templateUrl: 'templates/course-detail.html',
-          controller: 'CourseDetailCtrl'
-        }
-      }
+      templateUrl: 'templates/course-detail.html',
+      controller: 'CourseDetailCtrl'
     })
 
   .state('tab.licensinginfo', {

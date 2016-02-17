@@ -4,11 +4,31 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{course.name}}">
-  <ion-content class="padding">
-    <img ng-src="{{course.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{course.lastText}}
-    </p>
-  </ion-content>
+
+<ion-view view-title="COURSE DETAILS">
+<ion-content>
+
+<div class="bgcolorwhitesmoke">
+<p class="individualcoursestitle">COURSE DETAILS</p>
+<div>
+<p class="boldtext padding">{{course.name}}</p>
+<span class="buttons item-button-right">
+<button class="button button-balanced" ng-click="AddToCart()">Add to Cart</button>
+</span>
+</div>
+</br>
+<div class="row">
+<div class="col coursedata">
+	<img ng-src="{{course.stars | linkstars }}">
+</div>
+<div class="col coursedata">Hrs:  <span class="boldtext" ng-bind="course.hours"></span></div>
+<div class="col centered coursedata"><img ng-src="{{course.type|linktype}}">
+</div>
+<div class="col coursedata">Price:  <span class="boldtext">${{course.price}}</span></div>
+</div>
+</br>
+</div>
+<div class="padding" ng-bind-html="course.description | sanitize">
+</div>
+</ion-content>
 </ion-view>

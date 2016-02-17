@@ -1,17 +1,32 @@
 <ion-view view-title="Correspondence">
-  <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
-    <p>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-    If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      For help sending push notifications, join the <a href="https://apps.ionic.io/signup" target="_blank">Ionic Platform</a> and check out <a href="http://docs.ionic.io/docs/push-overview" target="_blank">Ionic Push</a>. We also have other services available.
-    </p>
+  <ion-content>
+  <p class="padding coursedata">Courses that are available to complete manually and send by snail mail.</p>
+  <span class="individualcoursestitle">PACKAGES</span>
+  <div class="card">
+  <div class="item item-text-wrap bgcolorwhitesmoke">
+    <div></div>
+    This is a basic Card which contains an item that has wrapping text.
+  </div>
+</div>
+</br>
+  <p class="individualcoursestitle">INDIVIDUAL COURSES</p>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="course in courses" type="item-text-wrap" href="#/course/{{course.id}}">
+        <p class="boldtext">{{course.name}}</p>
+        <div class="row">
+        <div class="col coursedata">
+        <img ng-src="{{course.stars | linkstars }}">
+        </div>
+        <div class="col coursedata">Hrs:  <span class="boldtext" ng-bind="course.hours"></span></div>
+        <div class="col centered coursedata"><img ng-src="{{course.type|linktype}}">
+        </div>
+        <div class="col coursedata">Price:  <span class="boldtext">${{course.price}}</span></div>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button-assertive" ng-click="remove(course)">
+          Delete
+        </ion-option-button>
+        </div>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
